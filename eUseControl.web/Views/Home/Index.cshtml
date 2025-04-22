@@ -1,14 +1,28 @@
-﻿<!DOCTYPE html>  
+﻿<!DOCTYPE html>
+@model eUseControl.web.Models.UserMealViewModel
+
 @{
     ViewBag.Title = "Index";
 }
 <html>
 <head>
 
-    </head>
-        <body>
+</head>
+<body>
 
-        <h2>Wellcome to the first page!!</h2>
-        </body>
-    </html>
+    <h2>Hello, @Model.Username</h2>
+    <h3>Total calories for today: </h3>
+
+    @foreach (var meal in Model.Meals)
+    {
+        <h3>@meal.Name (@meal.Date.ToShortDateString())</h3>
+            <ul>
+            @foreach (var item in meal.Items)
+            {
+            <li>@item.Name - @item.Calories calorii</li>
+            }
+    </ul>
+    }
+</body>
+</html>
 
