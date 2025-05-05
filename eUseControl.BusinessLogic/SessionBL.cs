@@ -1,16 +1,16 @@
 ﻿using eUseControl.BusinessLogic.Interfaces;
-using eUseControl.Domain.Entities;
+using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BusinessLogic
 {
     public class SessionBL : ISession
     {
-        public User Login(string email, string password)
+        public UDbTable Login(string email, string password)
         {
             // aici va fi logica de verificare în baza de date
             if (email == "admin@test.com" && password == "admin")
             {
-                return new User { Email = email, Role = "Admin" };
+                return new UDbTable { Email = email, Role = "Admin" };
             }
 
             return null;

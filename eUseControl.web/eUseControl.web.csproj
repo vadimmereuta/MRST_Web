@@ -243,12 +243,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eUseControl.BusinessLogic\eUseControl.BusinessLogic.csproj">
-      <Project>{27799d4a-d3b0-402d-8e6c-0c24e625f362}</Project>
+      <Project>{5ac8155a-37c6-4fe8-b3b4-4930fc5ead42}</Project>
       <Name>eUseControl.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\eUseControl.Domain\eUseControl.Domain.csproj">
-      <Project>{a42df362-a9d0-46b4-bf78-997bfe7f57b3}</Project>
+      <Project>{25fa0127-f514-48fa-9bd3-2a23ef16acdd}</Project>
       <Name>eUseControl.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eUseControl.Helpers\eUseControl.Helpers.csproj">
+      <Project>{0cc5840c-1854-445f-890c-026475152104}</Project>
+      <Name>eUseControl.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
