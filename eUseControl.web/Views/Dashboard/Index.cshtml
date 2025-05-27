@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Salut, @ViewBag.Username!</h2>
+<p>Bine ai venit în panoul tău personal.</p>
+
+<ul>
+    <li><a href="@Url.Action("Index", "Meals")">Mesele tale</a></li>
+    <li><a href="@Url.Action("Index", "Workouts")">Antrenamentele tale</a></li>
+    <li><a href="@Url.Action("Index", "Reports")">Vezi progresul</a></li>
+</ul>

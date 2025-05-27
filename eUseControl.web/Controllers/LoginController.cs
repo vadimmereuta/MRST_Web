@@ -1,23 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using eUseControl.web.Models;
 using eUseControl.BusinessLogic;
+using eUseControl.BusinessLogic.Interfaces;
+using eUseControl.Domain.Entities;
 
-public class LoginController : Controller
+namespace eUseControl.web.Controllers
 {
-    private readonly BusinessLogic _bl = new BusinessLogic();
-
-    public ActionResult Login(string email, string password)
+    public class LoginController : Controller
     {
-        var user = _bl.Session.Login(email, password);
-        if (user != null)
+        private readonly ISession _session;
+
+        public LoginController()
         {
-            return RedirectToAction("Index", "Home");
+            _session = new SessionBL();
         }
 
-        ViewBag.Error = "Date incorecte.";
-        return View();
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(new LoginViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult Index(LoginViewModel model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            var user = _session.Login(model.Email, model.Password);
+
+            if (user == null)
+            {
+                ViewBag.Error = "Date de autentificare incorecte.";
+                return View(model);
+            }
+
+            // salvăm în sesiune
+            Session["Username"] = user.Username;
+            Session["Role"] = user.Role;
+
+            return RedirectToAction("Index", "Dashboard");
+        }
     }
 }

@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[UDpTables]
+(
+	[Id] INT IDENTITY (1, 1) NOT NULL,
+	[Username] NVARCHAR (30) NOT NULL,
+	[Password] NVARCHAR (50) NOT NULL,
+	[Email] NVARCHAR  NOT NULL,
+	[LastLogin] DATETIME NOT NULL,
+	[LastIp] NVARCHAR (30) NULL,
+	[Level] Int NOT NULL
+	CONSTRAINT [PK_dbo.UDpTables] PRIMARY KEY CLUSTERED ([Id] ASC)
+)

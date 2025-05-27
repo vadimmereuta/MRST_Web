@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eUseControl.Domain
+namespace eUseControl.BusinessLogic.DBModel
 {
-    public class Class1
+    internal class UserContext
     {
     }
 }
