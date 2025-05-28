@@ -1,0 +1,24 @@
+﻿@model eUseControl.web.Models.MealViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Adaugă masă";
+}
+
+<h2>Adaugă o masă</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.Date)
+    </div>
+
+    <button class="btn btn-success" type="submit">Salvează</button>
+}

@@ -1,0 +1,42 @@
+﻿@model List<eUseControl.Domain.Entities.Models.FoodItem>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Biblioteca de Alimente";
+}
+
+<h2>Biblioteca de Alimente</h2>
+<a href="@Url.Action("Add", "Food")" class="btn btn-primary">Adaugă aliment</a>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Calorii</th>
+            <th>Proteine</th>
+            <th>Carbohidrați</th>
+            <th>Grăsimi</th>
+            <th>Acțiuni</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var food in Model)
+        {
+            <tr>
+                <td>@food.Name</td>
+                <td>@food.Calories</td>
+                <td>@food.Protein</td>
+                <td>@food.Carbs</td>
+                <td>@food.Fat</td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Food", new { id = food.Id }, FormMethod.Post, new { onsubmit = "return confirm('Ești sigur că vrei să ștergi acest aliment?');" }))
+                    {
+                        <button type="submit" class="btn btn-danger btn-sm">Șterge</button>
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

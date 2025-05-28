@@ -1,0 +1,18 @@
+﻿@model eUseControl.Domain.Entities.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Profilul meu";
+}
+
+<h2>Profilul tău</h2>
+
+<div class="card" style="max-width: 400px;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Username</h5>
+        <p class="card-text"><strong>Email:</strong> @Model.Email</p>
+        <p class="card-text"><strong>Rol:</strong> @Model.Role</p>
+    </div>
+</div>
+<a href="@Url.Action("Edit", "Profile")" class="btn btn-warning">Editează datele personale</a>
+
+

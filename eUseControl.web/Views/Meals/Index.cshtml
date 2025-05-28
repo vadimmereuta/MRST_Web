@@ -1,0 +1,35 @@
+﻿@model List<eUseControl.Domain.Entities.Models.Meal>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Mesele mele";
+}
+
+<h2>Mesele mele</h2>
+
+<a class="btn btn-primary" href="@Url.Action("Add", "Meals")">Adaugă o masă</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nume masă</th>
+            <th>Data</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var meal in Model)
+        {
+            <tr>
+                <td>@meal.Name</td>
+                <td>@meal.Date.ToShortDateString()</td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Meals", new { id = meal.Id }, FormMethod.Post, new { onsubmit = "return confirm('Ești sigur că vrei să ștergi această masă?');" }))
+                    {
+                        <button class="btn btn-danger btn-sm" type="submit">Șterge</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

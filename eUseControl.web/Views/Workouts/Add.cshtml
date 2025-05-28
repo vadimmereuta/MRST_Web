@@ -1,0 +1,27 @@
+﻿@model eUseControl.Domain.Entities.Workout
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Adaugă antrenament";
+}
+
+<h2>Adaugă un antrenament</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Type)
+        @Html.TextBoxFor(m => m.Type, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DurationMinutes)
+        @Html.TextBoxFor(m => m.DurationMinutes, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", type = "date" })
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvează</button>
+}

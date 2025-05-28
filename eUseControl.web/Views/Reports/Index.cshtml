@@ -1,0 +1,36 @@
+﻿@model eUseControl.web.Models.UserStatsViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Statistici";
+}
+
+<h2>Statistici personale</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Mese înregistrate</h5>
+                <p class="card-text display-4">@Model.TotalMeals</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Alimente salvate</h5>
+                <p class="card-text display-4">@Model.TotalFoodItems</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Antrenamente efectuate</h5>
+                <p class="card-text display-4">@Model.TotalWorkouts</p>
+            </div>
+        </div>
+    </div>
+</div>

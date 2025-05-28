@@ -1,0 +1,39 @@
+﻿@model List<eUseControl.Domain.Entities.Workout>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Antrenamente";
+}
+
+<h2>Antrenamentele tale</h2>
+
+<a class="btn btn-primary mb-3" href="@Url.Action("Add", "Workouts")">Adaugă antrenament</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Tip</th>
+            <th>Durată (min)</th>
+            <th>Data</th>
+            <th>Acțiuni</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var workout in Model)
+        {
+            <tr>
+                <td>@workout.Type</td>
+                <td>@workout.DurationMinutes</td>
+                <td>@workout.Date.ToShortDateString()</td>
+                <td>
+                    @using (Html.BeginForm("Delete", "Workouts", new { id = workout.Id }, FormMethod.Post, new { onsubmit = "return confirm('Ești sigur că vrei să ștergi acest antrenament?');" }))
+                    {
+                        <button type="submit" class="btn btn-danger btn-sm">Șterge</button>
+                    }
+                </td>
+
+
+            </tr>
+        }
+    </tbody>
+</table>

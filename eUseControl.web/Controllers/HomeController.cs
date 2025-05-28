@@ -12,28 +12,28 @@ namespace eUseControl.web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var meal1 = new Meal
+            var meal1 = new MealDisplay
             {
                 Name = "Mic Dejun",
                 Date = DateTime.Now,
-                Items = new List<FoodItem>
+                Items = new List<FoodItemViewModel>
                 {
-                    new FoodItem { Name = "Ou fiert", Calories = 70 },
-                    new FoodItem { Name = "Paine prajita", Calories = 120 },
-                    new FoodItem { Name = "Paine", Calories = 100 }
+                    new FoodItemViewModel { Name = "Ou fiert", Calories = 70 },
+                    new FoodItemViewModel { Name = "Paine prajita", Calories = 120 },
+                    new FoodItemViewModel { Name = "Paine", Calories = 100 }
 
                 }
             };
 
-            var meal2 = new Meal
+            var meal2 = new MealDisplay
             {
                 Name = "Mare Dejun",
                 Date = DateTime.Now,
-                Items = new List<FoodItem>
+                Items = new List<FoodItemViewModel>
                 {
-                    new FoodItem { Name = "Ou fiert", Calories = 70 },
-                    new FoodItem { Name = "Paine prajita", Calories = 120 },
-                    new FoodItem { Name = "Paine", Calories = 100 }
+                    new FoodItemViewModel { Name = "Ou fiert", Calories = 70 },
+                    new FoodItemViewModel { Name = "Paine prajita", Calories = 120 },
+                    new FoodItemViewModel { Name = "Paine", Calories = 100 }
 
                 }
             };
@@ -41,7 +41,7 @@ namespace eUseControl.web.Controllers
             var model = new UserMealViewModel
             {
                 Username = "Vadim",
-                Meals = new List<Meal> { meal1, meal2 }
+                Meals = new List<MealDisplay> { meal1, meal2 }
             };
 
             return View(model);
