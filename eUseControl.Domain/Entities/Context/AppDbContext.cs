@@ -15,9 +15,7 @@ namespace eUseControl.Domain
         public DbSet<Meal> Meals { get; set; }
         public DbSet<MealItem> MealItems { get; set; }
         public DbSet<Workout> Workouts { get; set; }
+        
 
     }
-
-
 }
-

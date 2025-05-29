@@ -21,43 +21,5 @@ namespace eUseControl.web.Controllers
 
             return View(user);
         }
-
-        public ActionResult Edit()
-        {
-            string username = Session["Username"] as string;
-            var user = db.Users.FirstOrDefault(u => u.Username == username);
-
-            if (user == null) return HttpNotFound();
-
-            var model = new EditProfileViewModel
-            {
-                Email = user.Email,
-                Username = user.Username
-            };
-
-            return View(model);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(EditProfileViewModel model)
-        {
-            if (!ModelState.IsValid) return View(model);
-
-            string username = Session["Username"] as string;
-            var user = db.Users.FirstOrDefault(u => u.Username == username);
-            if (user == null) return HttpNotFound();
-
-            user.Email = model.Email;
-            user.Username = model.Username;
-
-            if (!string.IsNullOrWhiteSpace(model.NewPassword))
-                user.Password = model.NewPassword; // pentru securitate, hash recomandat
-
-            db.SaveChanges();
-            ViewBag.Message = "Datele au fost actualizate cu succes!";
-            return View(model);
-        }
-
     }
 }

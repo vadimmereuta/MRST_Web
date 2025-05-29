@@ -22,7 +22,7 @@ namespace eUseControl.Domain.Entities.Models
 
         public string Role { get; set; } = "User";
 
-        public virtual ICollection<FoodItem> FoodItems { get; set; }
+        public virtual ICollection<Meal> Meals { get; set; }
     }
 }
 

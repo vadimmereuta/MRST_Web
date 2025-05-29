@@ -8,6 +8,5 @@ namespace eUseControl.Domain.Entities.Context
 {
     internal class DbContext
     {
-
     }
 }

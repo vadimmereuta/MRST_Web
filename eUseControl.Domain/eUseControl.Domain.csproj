@@ -60,17 +60,13 @@
     <Compile Include="Entities\Models\MealItem.cs" />
     <Compile Include="Entities\Models\User.cs" />
     <Compile Include="Entities\Models\Workout.cs" />
-    <Compile Include="Migrations\202505280851465_InitialCreate.cs" />
-    <Compile Include="Migrations\202505280851465_InitialCreate.Designer.cs">
-      <DependentUpon>202505280851465_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202505261501013_InitialCreate.cs" />
+    <Compile Include="Migrations\202505261501013_InitialCreate.Designer.cs">
+      <DependentUpon>202505261501013_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202505280924269_UpdateUser.cs" />
-    <Compile Include="Migrations\202505280924269_UpdateUser.Designer.cs">
-      <DependentUpon>202505280924269_UpdateUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202505281037374_AddAdmin.cs" />
-    <Compile Include="Migrations\202505281037374_AddAdmin.Designer.cs">
-      <DependentUpon>202505281037374_AddAdmin.cs</DependentUpon>
+    <Compile Include="Migrations\202505271404570_AddWorkoutTable.cs" />
+    <Compile Include="Migrations\202505271404570_AddWorkoutTable.Designer.cs">
+      <DependentUpon>202505271404570_AddWorkoutTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,14 +76,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202505280851465_InitialCreate.resx">
-      <DependentUpon>202505280851465_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505261501013_InitialCreate.resx">
+      <DependentUpon>202505261501013_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505280924269_UpdateUser.resx">
-      <DependentUpon>202505280924269_UpdateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505281037374_AddAdmin.resx">
-      <DependentUpon>202505281037374_AddAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505271404570_AddWorkoutTable.resx">
+      <DependentUpon>202505271404570_AddWorkoutTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

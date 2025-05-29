@@ -15,10 +15,5 @@ namespace eUseControl.Domain.Entities.Models
         public float Protein { get; set; }
         public float Carbs { get; set; }
         public float Fat { get; set; }
-
-        //public int UserId { get; set; }
-
-        //[ForeignKey("UserId")]
-        //public User User { get; set; }
     }
 }
